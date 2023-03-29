@@ -1,4 +1,5 @@
-# progetto didattico - bolla d'accompagnamento flessibile
+# progetto didattico 
+## bolla d'accompagnamento flessibile
 
 questo progetto ha lo scopo, per chi lo sta scrivendo, di aiutare ad imparare tecniche e migliori pratiche.
 
@@ -10,7 +11,16 @@ diciamo che vogliamo seguire un contenitore, che ha una sua ubicazione geografic
 
 la tipologia iniziale può cambiare durante il tragitto, o al dividersi. tanto per esempio, possiamo iniziare con una quantità di minerale grezzo, ed un evento può essere una sua frammentazione, o depurazione. altro esempio, durante il trasporto di frutta, una parte può maturare eccessivamente per proseguire verso la destinazione finale.
 
-così come per il basic Hardhat use case, avremo i contratti, i test, e gli script per il deployment iniziale, come anche per generare alcuni eventi che simulino il tragitto di uno o più dei nostri oggetti virtuali.
+così come per il basic Hardhat use case, avremo contratti, test, e script per il deployment iniziale, come anche per generare alcuni eventi che simulino il tragitto di uno o più dei nostri oggetti virtuali.
+
+## tecniche e problemi con cui faremo pratica
+
+* git, ovviamente, dentro di Visual Studio Code, in associazione con hardhat e OpenZeppelin
+* EIP1167 (cloni minimi)
+* stima del gas necessario, confronto fra le opzioni.
+* deployment su Mumbai
+* deployment su Polygon Mumbai, una L2 strettamente associata a Mumbai
+* ERC-721 (o lo standard più vicino al problema descritto)
 
 ## dal documento d'esempio:
 
