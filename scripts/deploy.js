@@ -9,10 +9,10 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const Class = await hre.ethers.getContractFactory('Logic');
-  console.log('deploying Logic ...');
+  const Class = await hre.ethers.getContractFactory('Factory');
+  console.log('deploying Factory ...');
   const object = await Class.deploy();
-  console.log('Logic deployed to: ', object.address);
+  console.log('Factory deployed to: ', object.address);
   console.log('remember to copy the deployed contract address.');
 }
 
