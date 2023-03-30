@@ -3,8 +3,8 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/proxy/Clones.sol";
 
 contract Logic {
-    uint256 state;
-    uint256 age;
+    uint256 public state;
+    uint256 public age;
     address mylogic;
     constructor() payable {
     }

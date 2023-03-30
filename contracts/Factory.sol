@@ -5,7 +5,8 @@ import "@openzeppelin/contracts/proxy/Clones.sol";
 import "./Logic.sol";
 
 contract Factory {
-    address immutable tokenImplementation;
+    address public tokenImplementation;
+    address[] public clones;
 
     constructor() payable {
         tokenImplementation = address(new Logic());
@@ -16,6 +17,7 @@ contract Factory {
     function createToken() external returns (address) {
         address clone = Clones.clone(tokenImplementation);
         Logic(payable(clone)).initialize(0, tokenImplementation);
+        clones.push(clone);
         return clone;
     }
     
