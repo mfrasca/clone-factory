@@ -10,7 +10,7 @@ contract Logic {
     }
     receive() external payable {}
     function initialize(uint256 _state, address _mylogic) public {
-        age = 0;
+        // age = 0; // this is the default value
         state = _state;
         mylogic = _mylogic;
     }
