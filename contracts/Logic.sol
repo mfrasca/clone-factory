@@ -6,6 +6,10 @@ contract Logic {
     uint256 public state;
     uint256 public age;
     address mylogic;
+
+    event CloneInitialized(uint256 age, uint256 state);
+    event CloneSplit(uint256 age, uint256 state);
+
     constructor() payable {
     }
     receive() external payable {}
@@ -13,6 +17,7 @@ contract Logic {
         // age = 0; // this is the default value
         state = _state;
         mylogic = _mylogic;
+        emit CloneInitialized(age, _state);
     }
     function raise(uint256 amount) public returns(address) {
         assert(amount < 6);
@@ -21,6 +26,7 @@ contract Logic {
         if(state>5) {
             uint256 newstate = (state / 2);
             state = state - newstate;
+            emit CloneSplit(age, state);
             address result = address(Clones.clone(mylogic));
             Logic(payable(result)).initialize(newstate, mylogic);
             return(result);
