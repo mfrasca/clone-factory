@@ -14,17 +14,22 @@ contract Logic {
         state = _state;
         mylogic = _mylogic;
     }
-    function raise() external returns(address) {
+    function raise(uint256 amount) public returns(address) {
+        assert(amount < 6);
         age++;
-        state++;
+        state += amount;
         if(state>5) {
-            state = 3;
+            uint256 newstate = (state / 2);
+            state = state - newstate;
             address result = address(Clones.clone(mylogic));
-            Logic(payable(result)).initialize(3, mylogic);
+            Logic(payable(result)).initialize(newstate, mylogic);
             return(result);
         } else {
             return address(0x0);
         }
+    }
+    function raise() external returns(address) {
+        return raise({amount: 1});
     }
     function lower() external {
         age++;
