@@ -7,7 +7,9 @@ contract Logic {
     uint256 public age;
     address mylogic;
 
+    // event topic: e02849cd799ce55d96e71b7bdd90c95aa88505b1b2bda59618d548ee85d7ad65
     event CloneInitialized(uint256 age, uint256 state);
+    // event topic: 8301c022415cd7ca62da8060f418ae0154e8eb93cd727af883b7f1dac505acec
     event CloneSplit(uint256 age, uint256 state);
 
     constructor() payable {
