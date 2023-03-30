@@ -6,9 +6,7 @@ contract Logic {
     uint256 state;
     uint256 age;
     address mylogic;
-    address private owner;
     constructor() payable {
-        owner = msg.sender;
     }
     receive() external payable {}
     function initialize(uint256 _state, address _mylogic) public {
