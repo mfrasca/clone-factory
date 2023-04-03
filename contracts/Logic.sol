@@ -11,7 +11,7 @@ contract Logic {
     // event topic: e02849cd799ce55d96e71b7bdd90c95aa88505b1b2bda59618d548ee85d7ad65
     event CloneInitialized(uint256 age, uint256 state, address myroot);
     // event topic: 8301c022415cd7ca62da8060f418ae0154e8eb93cd727af883b7f1dac505acec
-    event CloneSplit(uint256 age, uint256 state, address myroot);
+    event CloneSplit(uint256 age, uint256 state, address myroot, address newclone);
 
     constructor() payable {
     }
@@ -30,10 +30,10 @@ contract Logic {
         if(state>5) {
             uint256 newstate = (state / 2);
             state = state - newstate;
-            emit CloneSplit(age, state, myroot);
-            address result = address(Clones.clone(mylogic));
-            Logic(payable(result)).initialize(newstate, mylogic, myroot);
-            return(result);
+            address newclone = address(Clones.clone(mylogic));
+            emit CloneSplit(age, state, myroot, newclone);
+            Logic(payable(newclone)).initialize(newstate, mylogic, myroot);
+            return(newclone);
         } else {
             return address(0x0);
         }
