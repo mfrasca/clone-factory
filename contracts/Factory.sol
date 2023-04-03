@@ -14,9 +14,9 @@ contract Factory {
     receive() external payable {}
 
     function createToken() external returns (address) {
-        address clone = Clones.clone(tokenLogic);
-        Logic(payable(clone)).initialize(0, tokenLogic);
-        return clone;
+        address root = Clones.clone(tokenLogic);
+        Logic(payable(root)).initialize(0, tokenLogic, root);
+        return root;
     }
     
 }

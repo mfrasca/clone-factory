@@ -6,20 +6,22 @@ contract Logic {
     uint256 public state;
     uint256 public age;
     address mylogic;
+    address myroot;
 
     // event topic: e02849cd799ce55d96e71b7bdd90c95aa88505b1b2bda59618d548ee85d7ad65
-    event CloneInitialized(uint256 age, uint256 state);
+    event CloneInitialized(uint256 age, uint256 state, address myroot);
     // event topic: 8301c022415cd7ca62da8060f418ae0154e8eb93cd727af883b7f1dac505acec
-    event CloneSplit(uint256 age, uint256 state);
+    event CloneSplit(uint256 age, uint256 state, address myroot);
 
     constructor() payable {
     }
     receive() external payable {}
-    function initialize(uint256 _state, address _mylogic) public {
+    function initialize(uint256 _state, address _mylogic, address _myroot) public {
         // age = 0; // this is the default value
         state = _state;
         mylogic = _mylogic;
-        emit CloneInitialized(age, _state);
+        myroot = _myroot;
+        emit CloneInitialized(age, _state, myroot);
     }
     function raise(uint256 amount) public returns(address) {
         assert(amount < 6);
@@ -28,9 +30,9 @@ contract Logic {
         if(state>5) {
             uint256 newstate = (state / 2);
             state = state - newstate;
-            emit CloneSplit(age, state);
+            emit CloneSplit(age, state, myroot);
             address result = address(Clones.clone(mylogic));
-            Logic(payable(result)).initialize(newstate, mylogic);
+            Logic(payable(result)).initialize(newstate, mylogic, myroot);
             return(result);
         } else {
             return address(0x0);
