@@ -13,6 +13,8 @@ contract Logic {
     // event topic: 49d4d33f6338aae2fa7c804cce9116c51ecca210a87974b146b1029d612fe541
     event CloneSplit(uint256 age, uint256 state, address indexed myroot, address newclone);
 
+    // forse però ci vuole pure un CloneUpdated event...
+
     constructor() payable {
     }
     receive() external payable {}
