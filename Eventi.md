@@ -36,5 +36,4 @@ nota come
 * gli eventi filtrati hanno come **topic0** una delle due firme dei due eventi distinti.
 * nel campo **data** c'entrano entrambi i valori uint256.
 
-
-
+per l'invocazione delle funzioni dei contratti, ho utilizzato [questo servizio](https://lovethewired.github.io/abi-playground).
