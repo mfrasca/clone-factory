@@ -11,7 +11,7 @@ contract Logic {
     // event topic: d54af3909a7d54e000f2ced32d70453840360f5e8f2649af0b766cffbf53791a
     event CloneInitialized(uint256 age, uint256 state, address indexed myroot);
     // event topic: 49d4d33f6338aae2fa7c804cce9116c51ecca210a87974b146b1029d612fe541
-    event CloneSplit(uint256 age, uint256 state, address indexed myroot, address indexed newclone);
+    event CloneSplit(uint256 age, uint256 state, address indexed myroot, address newclone);
 
     constructor() payable {
     }
