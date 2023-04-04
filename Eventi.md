@@ -43,4 +43,4 @@ nota come
 
 per l'invocazione delle funzioni dei contratti, ho utilizzato [questo servizio](https://lovethewired.github.io/abi-playground).
 
-per gli eventi relativi agli oggetti su Polygon(mumbai), ci vuole [un'altra apikey](https://docs.polygonscan.com/getting-started/viewing-api-usage-statistics) ed [il link base è diverso](https://api-testnet.polygonscan.com/api/), ma la sintassi è la stessa. (*su mumbai non capisco cosa sia l'evento creato dall'indirizzo 0x1010. boh?*)
+per gli eventi relativi agli oggetti su Polygon(mumbai), ci vuole [un'altra apikey](https://docs.polygonscan.com/getting-started/viewing-api-usage-statistics) ed [il link base è diverso](https://api-testnet.polygonscan.com/api/), ma la sintassi è la stessa. (*su mumbai appare, per ogni inizializzazione del clone, un evento LogFeeTransfer, creato dall'indirizzo 0x00…001010. boh? perché non anche su görli?*)
