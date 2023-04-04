@@ -12,9 +12,13 @@ per il calcolo della firma (topic0) degli eventi, puoi usare questo script Pytho
 
     import sha3
     def kck(v):
-      k = sha3.keccak_256()
-      k.update(v)
-      return k.hexdigest()
+        k = sha3.keccak_256()
+        k.update(v.encode('utf-8'))
+        return k.hexdigest()
+        
+    if __name__ == '__main__':
+        import sys
+        print(kck(sys.argv[1]))
 
 ho definito due eventi:
 * event CloneInitialized(uint256 age, uint256 state, address indexed myroot);
