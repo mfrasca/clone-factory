@@ -18,9 +18,10 @@ così come per il basic Hardhat use case, avremo contratti, test, e script per i
 * git, ovviamente, dentro di Visual Studio Code, in associazione con hardhat e OpenZeppelin
 * EIP1167 (cloni minimi)
 * stima del gas necessario, confronto fra le opzioni.
-* deployment sulla sidechain Mumbai (testnet di Polygon)
+* deployment sulla sidechain Mumbai (testnet di Polygon).
 * deployment su una L2 (ma quale? e come?)
-* ERC-721 (o lo standard più vicino al problema descritto)
+* ERC-721 (o lo standard più vicino al problema descritto).
+* logging, eventi, e loro utilizzo.
 
 ## dal documento d'esempio:
 
