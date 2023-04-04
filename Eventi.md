@@ -30,3 +30,11 @@ ho richiesto la creazione di un paio di oggetti iniziali ([uno](https://goerli.e
 
 se aggiungi la tua apikey a questo link, vedi i log corrispondenti alla storia dell'oggetto uno:
 https://api-goerli.etherscan.io/api?module=logs&action=getLogs&fromBlock=8770123&topic1=0x0000000000000000000000000a1cc2eaf27489778babf7efb5e74275e32a1487&apikey=la-tua-apikey
+
+nota come 
+* il filtro utilizza il **topic1**, che è il primo parametro **indexed** dei due eventi.
+* gli eventi filtrati hanno come **topic0** una delle due firme dei due eventi distinti.
+* nel campo **data** c'entrano entrambi i valori uint256.
+
+
+
