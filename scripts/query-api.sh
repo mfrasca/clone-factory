@@ -1,18 +1,18 @@
 #!/bin/bash
 
 script_dir="$(dirname "$(readlink -f "$0")")"
-polygonscan_api=$(sed -ne 's/.*polygonscan_api": "\(.*\)"/\1/p' $script_dir/../private.json)
+apikey=$(sed -ne 's/.*etherscan_api": "\(.*\)"/\1/p' $script_dir/../private.json)
 
 for topic in \
-    0xe02849cd799ce55d96e71b7bdd90c95aa88505b1b2bda59618d548ee85d7ad65\
-    0x8301c022415cd7ca62da8060f418ae0154e8eb93cd727af883b7f1dac505acec 
+    0xd54af3909a7d54e000f2ced32d70453840360f5e8f2649af0b766cffbf53791a\
+    0x49d4d33f6338aae2fa7c804cce9116c51ecca210a87974b146b1029d612fe541 
 do
-    wget -qO- "https://api-testnet.polygonscan.com/api?\
+    wget -qO- "https://api-goerli.etherscan.io/api?\
 module=logs&\
 action=getLogs&\
-fromBlock=33753000&\
-toBlock=33999651&\
+fromBlock=8771304&\
+toBlock=&\
 topic0=$topic&\
-apikey=$polygonscan_api"
+apikey=$apikey"
     echo
 done
