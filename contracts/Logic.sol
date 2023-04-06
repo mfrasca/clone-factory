@@ -8,17 +8,19 @@ contract Logic {
     address mylogic;
     address myroot;
 
-    // event topic: d54af3909a7d54e000f2ced32d70453840360f5e8f2649af0b766cffbf53791a
+    // events, and their topic0 hash, for filtering
     event CloneInitialized(uint256 age, uint256 state, address indexed myroot);
-    // event topic: 49d4d33f6338aae2fa7c804cce9116c51ecca210a87974b146b1029d612fe541
+    // d54af3909a7d54e000f2ced32d70453840360f5e8f2649af0b766cffbf53791a
     event CloneSplit(uint256 age, uint256 state, address indexed myroot, address newclone);
-
-    // forse però ci vuole pure un CloneUpdated event...
+    // 49d4d33f6338aae2fa7c804cce9116c51ecca210a87974b146b1029d612fe541
+    event CloneUpdated(uint256 age, uint256 state, address indexed myroot);
+    // 8c4769bdd2cf0d2686e6bbe7856d407d8059e0a4e479b75435aaeb6646b9649a
 
     constructor() payable {
     }
     receive() external payable {}
     function initialize(uint256 _state, address _mylogic, address _myroot) public {
+        require(address(myroot) == address(0), "already initialized");
         // age = 0; // this is the default value
         state = _state;
         mylogic = _mylogic;
@@ -37,6 +39,7 @@ contract Logic {
             Logic(payable(newclone)).initialize(newstate, mylogic, myroot);
             return(newclone);
         } else {
+            emit CloneUpdated(age, state, myroot);
             return address(0x0);
         }
     }
@@ -46,5 +49,6 @@ contract Logic {
     function lower() external {
         age++;
         if(state>0) state--;
+        emit CloneUpdated(age, state, myroot);
     }
 }
