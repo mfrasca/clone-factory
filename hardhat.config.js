@@ -21,4 +21,9 @@ module.exports = {
       accounts: private.accounts
     },
   },
+  etherscan: {
+    apiKey: {
+      goerli: private.etherscan_api
+    }
+  }
 };
