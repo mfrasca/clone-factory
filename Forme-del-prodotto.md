@@ -12,8 +12,9 @@ Se lavoriamo con questa proposta, le categorie individuate (classi di equivalenz
 ogni transazione (lavorazione, trasformazione) accetta in ingresso un solo tipo di prodotto, e ne produce di uno o più tipi, più la polvere, conservando la somma della quantità totale.
 
 i metadati associati ciascuna forma del prodotto:
-1. massa (di questa si conserva la somma)
-2. origine (questa si conserva fino alla destinazione finale)
+1. suo nome o descrizione, "human readable".
+1. massa (di questa si conserva la somma).
+2. origine (questa si conserva fino alla destinazione finale).
 
 Ciascuna lavorazione ha un suo identificativo, che viene aggiunto come topic1 ai suoi eventi ***lavorazione***, per agevolarne la raccolta.
 
