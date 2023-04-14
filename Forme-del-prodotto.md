@@ -1,4 +1,4 @@
-Il prodotto si misura in grammi, come a dire quintali con 5 decimali. Per identificare le classi di equivalenza, vediamo cosa avviene al prodotto lungo il suo tragitto. Fra parentesi il TokenID di ciascuna delle classi man mano che le identifichiamo.
+Il prodotto si misura in grammi, come a dire quintali con 5 decimali. Per identificare le classi di equivalenza, vediamo i punti di lavorazione, e cosa avviene al prodotto lungo il suo tragitto. Fra parentesi il TokenID di ciascuna delle classi man mano che le identifichiamo.
 
 1. inizialmente è nella forma non lavorata, originaria (1).
 2. si divide in un primo prodotto grezzo finito (2), un semilavorato destinato al passo successivo (3), e scarti di tipo ***a*** (4). 
@@ -14,9 +14,9 @@ ogni transazione (lavorazione, trasformazione) accetta in ingresso un solo tipo 
 i metadati associati ciascuna forma del prodotto:
 1. suo nome o descrizione, "human readable".
 1. massa (di questa si conserva la somma).
-2. origine (questa si conserva fino alla destinazione finale).
+1. origine (questa si conserva fino alla destinazione finale).
 
-Ciascuna lavorazione ha un suo identificativo, che viene aggiunto come topic1 ai suoi eventi ***lavorazione***, per agevolarne la raccolta.
+Ciascun punto di lavorazione 1…4 ha un suo identificativo, che viene aggiunto come topic1 ai suoi eventi ***lavorazione***, per agevolare la raccolta dei log. 
 
 Mi sembra opportuno che gli eventi ***lavorazione*** siano tanti quanti i tipi di prodotto primario risultanti. Da ogni lavorazione esce quindi un solo oggetto primario, scarti di tipo a e b, polvere. Il tipo di oggetto risultante caratterizza la lavorazione, il tipo di oggetto entrante nella lavorazione può essere dedotto dal risultante, ma lo ripetiamo per facilità di lettura.
 
