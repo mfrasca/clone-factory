@@ -2,7 +2,7 @@ Il prodotto si misura in grammi, come a dire quintali con 5 decimali. Per identi
 
 1. inizialmente è nella forma non lavorata, originaria (1).
 2. si divide in un primo prodotto grezzo finito (2), un semilavorato destinato al passo successivo (3), e scarti di tipo ***a*** (4). 
-3. si divide in scarti di tipo ***a*** e ***b*** (4 e 5), e una varietà di prodotti grezzi (facciamo conto: 6, … 12).
+3. si divide in scarti di tipo ***a*** e ***b*** (4 e 5), e una varietà di prodotti grezzi (facciamo conto: 6…12).
 4. alcuni dei prodotti grezzi vengono raffinati (facciamo conto: 6 e 7 possono diventare rispettivamente 13…15, e 16…20), e di nuovo si producono scarti di tipo ***a*** e ***b*** (4 e 5).
 
 Qui manca la perdita di peso, ed il deperimento. Potremmo descriverli come lavorazioni indesiderate. :-)
